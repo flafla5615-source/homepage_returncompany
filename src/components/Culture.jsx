@@ -6,7 +6,7 @@ export default function Culture() {
   const ref = useReveal()
 
   return (
-    <section id="culture" className="culture section section--light" ref={ref}>
+    <section id="culture" className="culture section section--panel" ref={ref}>
       <div className="container">
         <div className="section-head section-head--split" data-reveal>
           <div>
@@ -35,7 +35,7 @@ export default function Culture() {
               style={{ transitionDelay: `${(i % 3) * 80}ms` }}
             >
               <div className="culture-card__media">
-                <SmartImage src={post.image} alt={post.title} label={post.category} tone="light" />
+                <SmartImage src={post.image} alt={post.title} label={post.category} />
               </div>
               <div className="culture-card__body">
                 <span className="culture-card__cat">{post.category}</span>

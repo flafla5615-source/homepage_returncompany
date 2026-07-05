@@ -20,7 +20,7 @@ export default function Projects() {
       <div className="container">
         <div className="section-head section-head--split" data-reveal>
           <div>
-            <p className="kicker kicker--lime">KEY PROJECTS</p>
+            <p className="kicker kicker--gold">KEY PROJECTS</p>
             <h2 className="h2">
               WE BUILD
               <br />

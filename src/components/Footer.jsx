@@ -1,11 +1,14 @@
 import { footerInfo, businessFields, contact } from '../data/site'
 
 export default function Footer() {
-  const infoLine = [
-    footerInfo.ceo && `대표 ${footerInfo.ceo}`,
-    footerInfo.businessNumber && `사업자등록번호 ${footerInfo.businessNumber}`,
-    footerInfo.address,
-  ].filter(Boolean)
+  // 실제 정보가 site.js 에 입력되기 전까지 임의 생성하지 않고
+  // '정보 입력 필요' 상태로 표시합니다.
+  const infoItems = [
+    { label: '대표', value: footerInfo.ceo },
+    { label: '주소', value: footerInfo.address },
+    { label: '사업자등록번호', value: footerInfo.businessNumber },
+    { label: '문의', value: contact.email },
+  ]
 
   return (
     <footer className="footer">
@@ -26,9 +29,14 @@ export default function Footer() {
         <div className="footer__bottom">
           <div className="footer__info">
             <p>{footerInfo.companyNameKo}</p>
-            {/* 대표자·주소·사업자번호는 실제 정보가 입력되면 표시됩니다. */}
-            {infoLine.length > 0 && <p>{infoLine.join(' · ')}</p>}
-            {contact.email && <p>{contact.email}</p>}
+            <ul className="footer__meta">
+              {infoItems.map((item) => (
+                <li key={item.label}>
+                  <span>{item.label}</span>
+                  {item.value || <em className="footer__pending">정보 입력 필요</em>}
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="footer__sns">
             {contact.instagram && (

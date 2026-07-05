@@ -5,7 +5,7 @@ export default function Process() {
   const ref = useReveal()
 
   return (
-    <section className="process section section--light" ref={ref}>
+    <section className="process section section--panel" ref={ref}>
       <div className="container">
         <div className="section-head" data-reveal>
           <p className="kicker">HOW WE WORK</p>

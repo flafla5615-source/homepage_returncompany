@@ -45,7 +45,7 @@ export default function Brands() {
     filter === 'ALL' ? brands : brands.filter((b) => b.categories.includes(filter))
 
   return (
-    <section id="brands" className="brands section section--light" ref={ref}>
+    <section id="brands" className="brands section section--panel" ref={ref}>
       <div className="container">
         <div className="section-head section-head--split" data-reveal>
           <div>

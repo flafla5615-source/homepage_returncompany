@@ -11,7 +11,7 @@ export default function History() {
       <div className="container">
         <div className="section-head section-head--split" data-reveal>
           <div>
-            <p className="kicker kicker--lime">HISTORY</p>
+            <p className="kicker kicker--gold">HISTORY</p>
             <h2 className="h2">
               14 YEARS,
               <br />

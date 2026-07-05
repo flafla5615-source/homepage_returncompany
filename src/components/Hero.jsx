@@ -52,7 +52,7 @@ export default function Hero() {
         </h1>
         <p className="hero__fields">FITNESS · BOUTIQUE · SPACE · BRAND · COMMERCE</p>
         <div className="hero__actions">
-          <button className="btn btn--lime" onClick={() => scrollToSection('company')}>
+          <button className="btn btn--gold" onClick={() => scrollToSection('company')}>
             리턴라이프컴퍼니 보기
           </button>
           <button className="btn btn--ghost" onClick={() => scrollToSection('brands')}>

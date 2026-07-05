@@ -11,7 +11,7 @@ export default function FinalCta() {
     if (contact.email) {
       return (
         <a
-          className="btn btn--lime btn--lg"
+          className="btn btn--gold btn--lg"
           href={`mailto:${contact.email}?subject=${encodeURIComponent(subject)}`}
         >
           {label}
@@ -19,14 +19,14 @@ export default function FinalCta() {
       )
     }
     return (
-      <a className="btn btn--lime btn--lg" href="#contact-channels">
+      <a className="btn btn--gold btn--lg" href="#contact-channels">
         {label}
       </a>
     )
   }
 
   return (
-    <section id="contact" className="final section section--lime" ref={ref}>
+    <section id="contact" className="final section section--final" ref={ref}>
       <div className="container">
         <h2 className="final__title" data-reveal>
           공간을 만들고,

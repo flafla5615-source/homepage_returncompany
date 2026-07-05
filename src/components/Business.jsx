@@ -9,7 +9,7 @@ export default function Business() {
     <section id="business" className="business section section--dark" ref={ref}>
       <div className="container">
         <div className="section-head" data-reveal>
-          <p className="kicker kicker--lime">WHAT WE DO</p>
+          <p className="kicker kicker--gold">WHAT WE DO</p>
           <h2 className="h2">OUR BUSINESS</h2>
         </div>
 

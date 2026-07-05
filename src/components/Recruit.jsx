@@ -18,7 +18,7 @@ export default function Recruit() {
   return (
     <section id="recruit" className="recruit section section--black" ref={ref}>
       <div className="container">
-        <p className="kicker kicker--lime" data-reveal>RECRUIT & PARTNERSHIP</p>
+        <p className="kicker kicker--gold" data-reveal>RECRUIT & PARTNERSHIP</p>
         <h2 className="recruit__title" data-reveal>
           같은 공간에서 일하는 것을 넘어,
           <br />

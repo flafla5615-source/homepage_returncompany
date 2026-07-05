@@ -3,24 +3,32 @@ import { useReveal } from '../hooks/useReveal'
 import { useCountUp } from '../hooks/useCountUp'
 
 function StatItem({ stat }) {
-  const [ref, value] = useCountUp(stat.value)
+  const isPending = typeof stat.value !== 'number'
+  const [ref, value] = useCountUp(isPending ? 0 : stat.value)
   return (
     <div className="about__stat" data-reveal ref={ref}>
       <div className="about__stat-value">
-        {value}
+        {isPending ? (
+          // 확정되지 않은 수치는 임의로 쓰지 않고 상태로 표시 — stats.js 에서 value 입력 시 자동 전환
+          <span className="about__stat-pending">UPDATE SOON</span>
+        ) : (
+          value
+        )}
         <span className="about__stat-suffix">{stat.suffix}</span>
       </div>
-      <p className="about__stat-label">{stat.label}</p>
+      <p className="about__stat-label">
+        {stat.label}
+        {isPending && <em className="about__stat-note">수치 입력 대기</em>}
+      </p>
     </div>
   )
 }
 
 export default function About() {
   const ref = useReveal()
-  const visibleStats = stats.filter((s) => typeof s.value === 'number')
 
   return (
-    <section id="company" className="about section section--light" ref={ref}>
+    <section id="company" className="about section section--panel" ref={ref}>
       <div className="container">
         <div className="about__grid">
           <div className="about__head">
@@ -58,7 +66,7 @@ export default function About() {
         </div>
 
         <div className="about__stats">
-          {visibleStats.map((stat) => (
+          {stats.map((stat) => (
             <StatItem key={stat.id} stat={stat} />
           ))}
         </div>
